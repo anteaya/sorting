@@ -9,13 +9,13 @@ class MergeSort
   end
 
   def sort
-    if @array.length < 2
-      @array
+    if array.length < 2
+      array
     else
-      left = @array[0, @array.length / 2]
-      right = @array[@array.length / 2, @array.length - 1]
-      left = left.sort
-      right = right.sort
+      left = array[0, array.length / 2]
+      right = array[array.length / 2, array.length - 1]
+      left = MergeSort.new(left).sort
+      right = MergeSort.new(right).sort
       result = merge(left, right)
     end
   end
